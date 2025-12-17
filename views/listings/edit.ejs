@@ -1,0 +1,91 @@
+<% layout("layouts/boilerplate") -%>
+<body>
+    
+    <div class="row">
+    <div class="col-8 offset-2">
+        <br>
+       <br>
+     <h1> Edit your listing....</h1>
+    
+    <form action="/listings/<%= listing._id %>?_method=PUT"  method="post" class="needs-validation" novalidate enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input name="listing[title]" type="text" value="<%= listing.title %>"  class="form-control" required>
+            <div class="invalid-feedback">
+                required field!
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea name="listing[description]"   class="form-control" required><%= listing.description %></textarea>
+            <div class="invalid-feedback">
+                required field!
+            </div>
+        </div>
+        <!-- <div class="mb-3">
+            <label for="image-name" class="form-label">Image Name</label>
+            <input type="text" 
+            name="listing[image][filename]" 
+            value="<%= //listing.image.filename %>" 
+            class="form-control">
+        </div>  -->
+        <!-- <div class="mb-3">
+            <label for="image-url" class="form-label">Image link</label>
+            <input type="text" name="listing[image][url]" value="<%= listing.image.url %>" class="form-control" required>
+            <div class="invalid-feedback">
+                required field!
+            </div>
+        </div>  -->
+         <div class="mb-3">
+            <p>Original image</p>
+            <img src="<%= originalImage %>" alt="" height="200px" width="300px">
+            
+        </div>
+        <div class="mb-3">
+            <label for="image-url" 
+            class="form-label">Image link</label>
+            <input type="file"
+             name="listing[image][url]"  
+             class="form-control" required>
+            <div class="invalid-feedback">
+                required field!
+            </div>
+        </div>
+        <div class="row">
+            <div class="mb-3 col-md-4">
+             <label for="price" class="form-label">Price</label>
+             <input type="number" value="<%= listing.price %>" name="listing[price]" class="form-control" required>
+             <div class="invalid-feedback">
+                required field!
+            </div>
+        </div>
+        <div class="mb-3 col-md-8">
+            <label for="country" class="form-label">Country</label>
+            <input type="text" value="<%= listing.country %>" name="listing[country]" class="form-control" required>
+            <div class="invalid-feedback">
+                required field!
+            </div>
+        </div>
+        </div>
+        <div class="mb-3 ">
+            <label for="location" class="form-label">Location</label>
+            <input type="text" value="<%= listing.location %>" name="listing[location]" class="form-control" required> 
+            <div class="invalid-feedback">
+                required field!
+            </div>
+        </div>
+        
+        <div class="mb-3 form-check">
+             <input type="checkbox" class="form-check-input" id="exampleCheck1">
+             <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+
+        <button class="btn btn-dark edit-btn">Edit</button>
+        <br><br>
+
+    </form>
+    </div>
+    </div>
+
+    </form>
+</body>
