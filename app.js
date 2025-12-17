@@ -58,7 +58,11 @@ async function main(){
 // app.get("/",(req,res)=>{
 //     res.send("welcome to wondulust");
 // });
-console.log(MongoStore);
+app.get("/", (req, res) => {
+    res.redirect("/listings");
+});
+
+//console.log(MongoStore);
 
 
 const store = MongoStore.create({
