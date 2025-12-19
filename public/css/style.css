@@ -157,3 +157,77 @@ footer {
 
 /* review */
 
+
+
+
+@media (max-width: 768px) {
+    .navbar {
+        height: auto;
+        /* Allow navbar to grow */
+        min-height: 4rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .nav-search {
+        /* order: 1; Removed to restore natural order: Brand -> Search -> Toggler */
+        margin-right: auto;
+        /* Pushes the next item (Toggler) to the far right */
+        margin-left: 0.5rem;
+        /* Little spacing from brand */
+    }
+
+    .search-input {
+        width: 10rem !important;
+        /* Reduced width for mobile */
+        padding: 0.5rem 1rem !important;
+        font-size: 0.8rem;
+    }
+
+    .btn-search {
+        padding: 0 0.5rem 0 0.5rem !important;
+        font-size: 0.8rem;
+    }
+
+    .btn-search i {
+        margin-right: 0;
+    }
+
+    /* Hide text 'Search' on very small screens if needed, mostly handled by size */
+
+    #filters {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+        -webkit-overflow-scrolling: touch;
+        /* smooth scrolling on iOS */
+    }
+
+    .filter {
+        margin-right: 2rem;
+        /* Reduce margin on mobile */
+        min-width: 4rem;
+        /* Ensure click target size */
+    }
+
+    .f-info {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .f-info-links,
+    .f-info-socials,
+    .f-info-brands {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media (min-width: 769px) {
+    .nav-search {
+        margin-left: auto;
+        /* Push to the right/center on desktop */
+        margin-right: 1rem;
+    }
+}
+
